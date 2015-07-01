@@ -27,6 +27,7 @@ defmodule Examples do
   end
 
   defp run_tasks(process_count, task_function) do
+    IO.puts inspect node()
     {timing, _result} = :timer.tc(Spawner, :create_tasks, [process_count, task_function])
     IO.puts inspect timing
   end
